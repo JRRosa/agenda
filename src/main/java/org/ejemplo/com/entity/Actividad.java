@@ -2,6 +2,7 @@ package org.ejemplo.com.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,20 +10,32 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.ejemplo.com.entity.property.ActividadProperty;
+
 @Entity
 public class Actividad implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name=ActividadProperty.ID, nullable=false)
 	private Integer id;
+	@Column(name=ActividadProperty.ID_USUARIO, nullable=false)
 	private Integer idUsuario;
+	@Column(name=ActividadProperty.NOMBRE, nullable=false)
 	private String nombre;
+	@Column(name=ActividadProperty.DESCRIPCION)
 	private String descripcion;
+	@Column(name=ActividadProperty.LUGAR)
 	private String lugar;
+	@Column(name=ActividadProperty.ESTADO, nullable=false)
 	private Boolean estado;
+	@Column(name=ActividadProperty.FECHA_HORA_INICIO)
 	private String fechaHoraInicio;
+	@Column(name=ActividadProperty.FECHA_HORA_FIN)
 	private String fechaHoraFin;
+	@Column(name=ActividadProperty.FECHA_MODIFICACION)
 	private String fechaModificacion;
+	@Column(name=ActividadProperty.FECHA_REGISTRO)
 	private String fechaRegistro;
 	
 	@ManyToOne

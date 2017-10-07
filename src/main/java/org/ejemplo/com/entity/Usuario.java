@@ -3,23 +3,33 @@ package org.ejemplo.com.entity;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.ejemplo.com.entity.property.UsuarioProperty;
+
 @Entity
 public class Usuario implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name=UsuarioProperty.ID)
 	private Integer id;
+	@Column(name=UsuarioProperty.NOMBRE)
 	private String nombre;
+	@Column(name=UsuarioProperty.APELLIDO)
 	private String apellido;
+	@Column(name=UsuarioProperty.EMAIL)
 	private String email;
+	@Column(name=UsuarioProperty.CLAVE)
 	private String clave;
+	@Column(name=UsuarioProperty.FECHA_NACIMIENTO)
 	private String fechaNacimiento;
+	@Column(name=UsuarioProperty.FECHA_REGISTRO)
 	private String fechaRegistro;
 	
 	@OneToMany(mappedBy="usuario")
