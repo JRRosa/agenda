@@ -4,11 +4,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.ejemplo.com.dao.AbstractDao;
-import org.ejemplo.com.dao.facade.UsuarioFacade;
+import org.ejemplo.com.dao.facade.UserFacade;
 import org.ejemplo.com.dao.property.PropertyDao;
 import org.ejemplo.com.entity.User;
 
-public class UsuarioFacadeImpl extends AbstractDao<Integer, User> implements UsuarioFacade {
+public class UserFacadeImpl extends AbstractDao<Integer, User> implements UserFacade {
 
 	@PersistenceContext(name=PropertyDao.PERSISTENCE_UNIT_NAME)
 	EntityManager entityManager; 
